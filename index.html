@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Taslim's Page</title>
-    <link rel="shortcut icon" href="app/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="app/favicon.ico" type="image/x-icon">
 </head>
 <body>
+<script>
+    (function() {
+        var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+        link.type = 'image/x-icon';
+        link.rel = 'shortcut icon';
+        link.href = 'app/favicon.ico';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    })();
+</script>
 Welcome To My Page
 </body>
 </html>
