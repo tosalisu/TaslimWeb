@@ -3,17 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Taslim's Page</title>
+    <script>
+        var onload = function() {
+            console.log('1');
+            var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+            link.type = 'image/x-icon';
+            link.rel = 'shortcut icon';
+            link.href = 'app/favicon.ico';
+            tell = document.getElementsByTagName('head')[0].appendChild(link);
+            console.log(document.getElementsByTagName('head')[0]);
+            console.log(tell)
+        };
+
+        window.onload = onload();
+    </script>
 </head>
 <body>
 <script>
-    (function() {
+    var ffff = function(param) {
+        console.log('2');
         var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
         link.type = 'image/x-icon';
         link.rel = 'shortcut icon';
         link.href = 'app/favicon.ico';
-        document.getElementsByTagName('head')[0].appendChild(link);
-    })();
+        if(param === 2) {
+            link.href = 'https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico';
+        }
+        tell = document.getElementsByTagName('head')[0].appendChild(link);
+        console.log(document.getElementsByTagName('head')[0]);
+        console.log(tell)
+    };
+
+    window.onload = ffff();
 </script>
 Welcome To My Page
+
+<button onclick="ffff(2)">click</button>
 </body>
 </html>
